@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --bg-primary: hsla(0, 0%, 15%, 1);
+    --txt-color: hsla(0, 0%, 100%, 1);
+
+    --font-primary: 'Inter', sans-serif;
+    --font-weight-text: 400;
+    --font-weight-title: 700;
+
+    font-size: 62.5%; /* 10px */
+}
+
+body{
+    background-color: var(--bg-primary);
+    font-family: var(--font-primary);
+    color: var(--txt-color);
+}
+
+.page{
+    max-width: 39rem;
+    margin: 0 auto;
+}
+
+header{
+    text-align: center;
+    padding: 2rem 6rem;
+}
+
+h1{
+    font-size: 5.2rem;   
+    font-weight: var(--font-weight-title);
+    line-height: 6rem;
+
+    animation: toptodown 1s 0s;
+}
+
+h3{
+    font-size: 1.6rem;
+    font-weight: var(--font-weight-text);
+    margin-top: 2rem;
+
+    animation: toptodown 1s 0.4s backwards;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    animation: downtotop 1.5s 1s backwards ease;
+}
+
+.card{
+    position: relative;
+}
+
+.card img{
+    max-width: 34rem;
+    height: 30rem;
+    object-fit: cover;
+    border-radius: 1.5rem;
+    transition: all 1s;
+
+}
+
+.card img:hover{
+    transform: scale(1.1);
+    opacity: 0.5;
+}
+
+.card h2{
+    font-size: 3.2rem;
+    font-weight: var(--font-weight-title);
+
+    position: absolute;
+    bottom: 3rem;
+    left: 3rem;
+}
+
+.card p{
+    font-size: 1.6rem;
+    font-weight: var(--font-weight-text);
+
+    position: absolute;
+    bottom: 6.4rem;
+    left: 3rem;
+}
+
+@keyframes toptodown{
+    0%{
+        opacity: 0;
+        transform: translateY(-2rem);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes downtotop{
+        0%{
+            opacity: 0;
+            transform: translateY(10rem);
+        }
+    
+        100%{
+            opacity: 1;
+            transform: translateY(0);
+        }
+}
+
+@media (min-width: 900px){
+    .page{
+        max-width: 123.2rem;
+    }
+
+    header{
+        padding: 7.4rem 0rem;
+    }
+
+    h1{
+        font-size: 6.4rem;
+    }
+
+    h3{
+        font-size: 2.4rem;
+    }
+
+    main{
+        display: flex;
+        flex-direction:row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .card img{
+        max-width: 72rem;
+    }
+}
